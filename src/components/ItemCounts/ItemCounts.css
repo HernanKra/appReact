@@ -1,0 +1,19 @@
+
+.containerCount {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.botonItemCount  {
+    padding: 10px;
+    margin: 10px;
+}
+
+.botonAgregar {
+    padding: 7px;
+    margin-top: 10px;
+}
+
+.containerAgregar {
+    text-align: center;
+}
