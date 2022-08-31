@@ -3,7 +3,7 @@ import "../ItemCounts/ItemCounts.css"
 
 const ItemCount = ({ stock, initial, onAdd }) => {
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(initial);
 
     const sumar = () => {
         if (stock > count) {
@@ -12,18 +12,13 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
 
     const restar = () => {
-        if (stock > initial) {
+        if (count > initial) {
             setCount(count - 1)
         }
     }
 
     const AgregarCantidad = () => {
-        if (count <= 0) {
-            setCount(1)
-            alert("No puedes agregar menos de 1 producto")
-        } else {
             onAdd(count)
-        }
     }
 
     return (
