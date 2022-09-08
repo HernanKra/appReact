@@ -11,7 +11,7 @@ const ItemDetail = ( { data } ) => {
                 <div>
                     <p className="parrDetail">
                         {data.description} <br />
-                        $ {data.price}
+                        {data.price}
                     </p>
                 </div>
             </div>
