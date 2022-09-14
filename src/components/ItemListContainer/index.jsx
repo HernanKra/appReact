@@ -1,4 +1,4 @@
-import ItemCount from '../ItemCounts/ItemCounts'
+import './itemListCointaner.css'
 import ItemList from '../ItemList';
 import React, { useState, useEffect } from 'react';
 import products from '../../utils/products'
@@ -24,15 +24,14 @@ const ItemListContainer = ({ greeting }) => {
 
     }, [categoryId])
 
-    const onAdd = (cantidad) => {
-        alert(`Agregaste ${cantidad} producto/s al carrito`)
-    }
+
 
     return (
         <>
+        <div className='listContainer'>
             <h2> {greeting} </h2>
-            <ItemCount stock={7} initial={1} onAdd={onAdd} />
             <ItemList data={data} />
+        </div>
         </>
     )
 }

@@ -4,12 +4,31 @@
 }
 
 .detailCont {
-    display: block;
-    margin-top: 100px;
-    width: 50%;
+    width: 80%;
+    margin: auto;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 200px;
 }
 
 .parrDetail {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prodIzq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.prodDer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
