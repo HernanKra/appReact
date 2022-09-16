@@ -1,9 +1,13 @@
 import "../Item/item.css"
 import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
 
 const Item = ({ info }) => {
+    const prod = useContext(CartContext)
+    console.log(prod)
+
     return (
-        <div className="contenedorTarjeta">
             <div className="tarjetaProductos">
                 <Link to={`/detalle/${info.id}`}>
                     <img src={info.image} alt="" />
@@ -11,7 +15,6 @@ const Item = ({ info }) => {
                     <p>${info.price}</p>
                 </Link>
             </div>
-        </div>
     )
 }
 
