@@ -1,0 +1,19 @@
+.pTotal {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: end;
+    padding: 20px;
+}
+
+.vaciarCarro {  
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+
+.vaciarCarro button {
+    width: 100px;
+    height: 50px;
+    margin-right: 65px;
+}

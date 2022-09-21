@@ -1,0 +1,14 @@
+.itemImg {
+    width: 250px;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+.itemCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid;
+    width: 50%;
+    margin: auto;
+}
