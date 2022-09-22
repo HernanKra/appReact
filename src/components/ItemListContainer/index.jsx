@@ -1,8 +1,8 @@
 import './itemListCointaner.css'
 import ItemList from '../ItemList';
 import React, { useState, useEffect } from 'react';
-import products from '../../utils/products'
 import { useParams } from 'react-router-dom';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 const ItemListContainer = ({ greeting }) => {
 
@@ -11,15 +11,17 @@ const ItemListContainer = ({ greeting }) => {
     const { categoryId } = useParams()
 
     useEffect(() => {
-        const getData = new Promise(resolve => {
-            setTimeout(() => {
-                resolve(products);
-            }, 2000)
-        });
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, 'products');
+
+
         if (categoryId) {
-            getData.then(res => setData(res.filter(product => product.category === categoryId)));
+            const queryFilter = query(queryCollection, where('category', '==', categoryId))
+            getDocs(queryFilter)
+                .then(res => setData(res.docs.map(product => ({ id: product.id, ...product.data() }))))
         } else {
-            getData.then(res => setData(res))
+            getDocs(queryCollection)
+                .then(res => setData(res.docs.map(product => ({ id: product.id, ...product.data() }))))
         }
 
     }, [categoryId])
@@ -28,10 +30,10 @@ const ItemListContainer = ({ greeting }) => {
 
     return (
         <>
-        <div className='listContainer'>
-            <h2> {greeting} </h2>
-            <ItemList data={data} />
-        </div>
+            <div className='listContainer'>
+                <h2> {greeting} </h2>
+                <ItemList data={data} />
+            </div>
         </>
     )
 }
