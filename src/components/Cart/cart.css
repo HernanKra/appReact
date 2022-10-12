@@ -12,8 +12,21 @@
     align-items: flex-end;
 }
 
-.vaciarCarro button {
-    width: 100px;
-    height: 50px;
-    margin-right: 65px;
+button {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(249, 128, 21);
+    border-color: transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    margin: 10px;
+}
+
+button:hover {
+    transform: scale(1.03);
 }

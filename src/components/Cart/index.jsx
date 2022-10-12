@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import ItemCart from '../ItemCart';
 import './cart.css';
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import Swal from "sweetalert2";
+
 
 const Cart = () => {
     const { cart, totalPrice, clearCart } = useCartContext();
@@ -21,7 +23,12 @@ const Cart = () => {
         const db = getFirestore();
         const ordersCollection = collection(db, 'orders');
         addDoc(ordersCollection, order)
-        .then(({ id }) => console.log(id), alert('Su orden de compra fue generada exitosamente.'))
+        .then(({ id }) => Swal.fire({
+            icon: 'success',
+            title: 'Orden Exitosa',
+            text: `Su n de orden es ${id}`,
+            footer: 'Gracias por confiar en nosotros'
+          }))
     }
 
     if (cart.length === 0) {

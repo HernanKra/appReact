@@ -11,8 +11,8 @@ const Item = ({ info }) => {
             <div className="tarjetaProductos">
                 <Link to={`/detalle/${info.id}`}>
                     <img src={info.image} alt="" />
-                    <p>{info.name}</p>
-                    <p>${info.price}</p>
+                    <p className="tituloTarjeta">{info.name}</p>
+                    <p className="precioTarjeta">U$D {info.price}</p>
                 </Link>
             </div>
     )
